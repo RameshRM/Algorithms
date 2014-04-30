@@ -3,14 +3,14 @@
 var inputNumbers = [1,2,3,4,5,6,7];
 var rotateK = 3;
 printList(inputNumbers);
-printList(rotate(inputNumbers, rotateK));
+printList(rotateArray(inputNumbers, rotateK));
 
 var alphabets = ['a', 'b','c','d','e','f', 'g'];
 printList(alphabets);
-printList(rotate(alphabets, rotateK));
+printList(rotateArray(alphabets, rotateK));
 
 
-function rotate(inputList, rotateByK){
+function rotateArray(inputList, rotateByK){
    var counter = -1;
    var end = inputList.length;
    var start = end - rotateByK;
@@ -31,5 +31,5 @@ function printList(inputList){
 }
 
 if(typeof module !== "undefined" && typeof module.exports !== "undefined"){
-   module.exports.rotateArray = rotate; 
+   module.exports = rotateArray; 
 }
