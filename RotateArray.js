@@ -15,19 +15,21 @@ function rotate(inputList, rotateByK){
    var end = inputList.length;
    var start = end - rotateByK;
    var current, shifted;
-   for(int i=start; i<end; i++){
+   for(var i=start; i<end; i++){
      counter++;
      shifted = inputList[i];
      current = inputList[counter];
      inputList[i] = current;
      inputList[counter] = shifted;
-   }
+   }    
+   return inputList; 
 } 
  
 
 function printList(inputList){
-  var max = inputList.length;
-  for(var i=0; i< max; i++){
-    console.log(inputList[i]);
-  }
+    console.log(inputList.join(" | "));
+}
+
+if(typeof module !== "undefined" && typeof module.exports !== "undefined"){
+   module.exports.rotateArrayRight = rotate; 
 }
