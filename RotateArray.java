@@ -16,13 +16,13 @@ class RotateArray
 		for(Integer i = 0; i<=max; i++){
 			inputList.add(i+1);
 		}
-		for(int i=0; i<inputList.size()-1; i++){
+		for(int i=0; i<inputList.size(); i++){
 			System.out.print(String.format("%s |", inputList.get(i)));
 		}
 		System.out.println("");
 		
 		inputList = rotateArray(inputList, 2);
-		for(int i=0; i<inputList.size()-1; i++){
+		for(int i=0; i<inputList.size(); i++){
 			System.out.print(String.format("%s |", inputList.get(i)));
 		}
 		System.out.println("");
@@ -38,16 +38,24 @@ class RotateArray
 		alphabets.add("f");
 		alphabets.add("g");
 		rotateBy = 3;
+		System.out.println("");
+		System.out.println("");
+		for(int i=0; i<alphabets.size(); i++){
+			System.out.print(String.format("%s |", alphabets.get(i)));
+		}		
+System.out.println("");
+
 		alphabets = rotateArray(alphabets, rotateBy);
 		
-		for(int i=0; i<alphabets.size()-1; i++){
+		for(int i=0; i<alphabets.size(); i++){
 			System.out.print(String.format("%s |", alphabets.get(i)));
 		}		
 	}
 	
 	public static List<Object> rotateArray(List<Object> inputs, int k){
+		
 		int counter=-1;
-		int end = inputs.size()-1;
+		int end = inputs.size();
 		int start = end-k;
 		Object current;
 		Object shifted;
@@ -58,6 +66,7 @@ class RotateArray
 			inputs.set(i, current);
 			inputs.set(counter, shifted);
 		}
+		
 		return inputs;
 		
 	}
