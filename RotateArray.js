@@ -31,5 +31,5 @@ function printList(inputList){
 }
 
 if(typeof module !== "undefined" && typeof module.exports !== "undefined"){
-   module.exports.rotateArrayRight = rotate; 
+   module.exports.rotateArray = rotate; 
 }
