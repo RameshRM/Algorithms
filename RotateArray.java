@@ -10,38 +10,55 @@ class RotateArray
 	
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		List<Integer> inputList = new ArrayList<Integer>();
+		List<Object> inputList = new ArrayList<Object>();
 		int max = 7;
 		int rotateBy = 2;
-		for(int i = 0; i<=max; i++){
+		for(Integer i = 0; i<=max; i++){
 			inputList.add(i+1);
 		}
-for(int i=0; i<inputList.size()-1; i++){
+		for(int i=0; i<inputList.size()-1; i++){
 			System.out.print(String.format("%s |", inputList.get(i)));
 		}
 		System.out.println("");
 		
-		inputList = rotateArray(inputList, rotateBy);
+		inputList = rotateArray(inputList, 2);
 		for(int i=0; i<inputList.size()-1; i++){
 			System.out.print(String.format("%s |", inputList.get(i)));
 		}
+		System.out.println("");
+
+/*** * Rotate From a,b,c,d,e,f,g  Rotate   To * e,f,g,a,b,c,d * ***/;
+ 
+		List<Object> alphabets = new ArrayList<Object>();
+		alphabets.add("a");
+		alphabets.add("b");
+		alphabets.add("c");
+		alphabets.add("d");
+		alphabets.add("e");
+		alphabets.add("f");
+		alphabets.add("g");
+		rotateBy = 3;
+		alphabets = rotateArray(alphabets, rotateBy);
 		
+		for(int i=0; i<alphabets.size()-1; i++){
+			System.out.print(String.format("%s |", alphabets.get(i)));
+		}		
 	}
 	
-	public static List<Integer> rotateArray(List<Integer> numbers, int k){
+	public static List<Object> rotateArray(List<Object> inputs, int k){
 		int counter=-1;
-		int end = numbers.size()-1;
+		int end = inputs.size()-1;
 		int start = end-k;
-		int current;
-		int shifted;
+		Object current;
+		Object shifted;
 		for(int i=start; i<end; i++){
 			counter++;
-			shifted = numbers.get(i);
-			current = numbers.get(counter);
-			numbers.set(i, current);
-			numbers.set(counter, shifted);
+			shifted = inputs.get(i);
+			current = inputs.get(counter);
+			inputs.set(i, current);
+			inputs.set(counter, shifted);
 		}
-		return numbers;
+		return inputs;
 		
 	}
 }
