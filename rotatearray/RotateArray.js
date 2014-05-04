@@ -1,6 +1,6 @@
 'use strict';
 
-function rotateArray(inputList, rotateByK){
+function rotate(inputList, rotateByK){
    var counter = -1;
    var end = inputList.length;
    var start = end - rotateByK;
@@ -16,5 +16,5 @@ function rotateArray(inputList, rotateByK){
 } 
 
 if(typeof module !== "undefined" && typeof module.exports !== "undefined"){
-   module.exports['rotate-array'] = rotateArray; 
+   module.exports = {'rotate' : rotate};
 }
