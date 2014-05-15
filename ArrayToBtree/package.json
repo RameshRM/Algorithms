@@ -1,0 +1,25 @@
+{
+  "name": "ArrayToBtree",
+  "version": "1.0.0",
+  "description": "Helper Method to flatten an array to Binary Tree",
+  "main": "array-to-btree.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RameshRM/Algorithms"
+  },
+  "keywords": [
+    "algorithms",
+    "array",
+    "to",
+    "btree"
+  ],
+  "author": "Ramesh Mahadevan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/RameshRM/Algorithms/issues"
+  },
+  "homepage": "https://github.com/RameshRM/Algorithms"
+}
