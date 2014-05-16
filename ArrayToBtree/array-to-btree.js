@@ -1,40 +1,59 @@
 'use strict';
 var tree = new require('../btree/btree');
+var treeLength = 0;
 
-
-function buildBTree(inputArray, start, end) {
-
-    var i = start;
-    var left, right;
-
-    left = ((2 * i) + 1);
-    right = ((2 * i) + 2);
+function buildTree(inputList, start, end) {
     if (start > end) {
         return null;
-    }
-    var max = inputArray.length;
-    var node = new tree(inputArray[start]);
+    } else {
+        var node = new tree(inputList[start]);
+        var left = null,
+            right = null;
+        var leftIdx = (2 * start) + 1;
+        var rightIdx = (2 * start) + 2;
+        if (leftIdx <= end) {
+            left = buildTree(inputList, leftIdx, end);
+            if (left !== null) {
+                node.left = left;
+            }
+        }
 
-    if (left <= end) {
-        node.setLeft(buildBTree(inputArray, left, end));
+        if (rightIdx <= end) {
+            right = buildTree(inputList, rightIdx, end);
+            if (right !== null) {
+                node.right = right;
+            }
+        }
+        return node;
     }
-    if (right <= end) {
-        node.setRight(buildBTree(inputArray, right, end));
-    }
-    return node;
 }
 
-
+function walkTree(thisTree) {
+    for (var key in thisTree) {
+        if (thisTree.hasOwnProperty(key)) {
+            if (key === "value") {
+                treeLength = treeLength + 1;
+            } else if (key === "left") {
+                walkTree(thisTree.left);
+            } else if (key === "right") {
+                walkTree(thisTree.right);
+            }
+        }
+    }
+}
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
     module.exports = {
         'toBtree': function(inputArray) {
             if (typeof inputArray === "object") {
-                return buildBTree(inputArray, 0, inputArray.length);
+                return buildTree(inputArray, 0, inputArray.length - 1);
             } else {
                 return inputArray;
             }
-
+        },
+        treeLength: function(tree) {
+            walkTree(tree);
+            return treeLength;
         }
     };
 };

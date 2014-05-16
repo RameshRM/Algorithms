@@ -21,5 +21,21 @@
   "bugs": {
     "url": "https://github.com/RameshRM/Algorithms/issues"
   },
-  "homepage": "https://github.com/RameshRM/Algorithms"
+  "homepage": "https://github.com/RameshRM/Algorithms",
+
+  "dependencies": {
+    "mocha": "*",
+    "chai" : "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.0.0",
+    "grunt-simple-mocha" : "*",
+    "grunt-cli": "~0.1.8"
+  }
 }
