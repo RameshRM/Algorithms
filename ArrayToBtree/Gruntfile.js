@@ -26,12 +26,6 @@ module.exports = function (grunt) {
         },
         browserify: {
             main: {
-                src: ['./src/browser/App.js'],
-                dest: 'dist/app_bundle_main.js',
-                options: {
-                    alias: ["./src/browser/App.js:SampleApp"],
-                    ignore: ['src/node/**/*.js'],
-                },
             },
             src: {
                 src: ['src/common/**/*.js', 'src/browser/**/*.js'],
@@ -98,5 +92,5 @@ module.exports = function (grunt) {
 
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'simplemocha', 'browserify', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'simplemocha']);
 };
