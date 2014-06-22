@@ -1,14 +1,14 @@
 'use strict';
 
-function BTree(value){
+function BTree(value) {
     this.value = value;
 }
 
 BTree.prototype = {
-    setLeft: function(value){
+    setLeft: function(value) {
         this.left = new BTree(value);
     },
-    setRight: function(value){
+    setRight: function(value) {
         this.right = new BTree(value);
     }
 };

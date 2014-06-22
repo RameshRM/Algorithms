@@ -225,6 +225,8 @@ var heaper = require('../heapify/index');
 var inputs = [8,12,9,7,22,3,26,14,11,15,22];
 inputs = [8,12,9,7,22,3,26,14,11,15,22];
 var hTree = heaper.heapify(inputs);
+console.log("Heaped Tree");
+console.log(JSON.stringify(hTree));
 inOrderTraverse(hTree);
 // console.log(inputs.join(","))
 var outputs = traverse(inputs);
